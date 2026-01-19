@@ -132,10 +132,10 @@ int main(int, char**) {
         if (alarm_active) {
             static bool already_played = false;
             if (local_tm->tm_hour == hour && local_tm->tm_min == minute && !already_played) {
-                const char* alarm_path = u8"alarm.mp3";
+                const char* alarm_path = u8"build/alarm.mp3";
                 if (!already_played) {
                     // 时间到了！
-                    ImGui::TextColored(ImVec4(1, 0, 0, 1), "!!! BEEP BEEP BEEP !!!");
+                    // ImGui::TextColored(ImVec4(1, 0, 0, 1), "!!! BEEP BEEP BEEP !!!");
                     ma_engine_play_sound(&engine, alarm_path, NULL);
                     // 这里以后就是触发音频播放的地方
                     is_playing = true;
