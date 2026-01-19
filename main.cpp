@@ -132,7 +132,7 @@ int main(int, char**) {
         if (alarm_active) {
             static bool already_played = false;
             if (local_tm->tm_hour == hour && local_tm->tm_min == minute && !already_played) {
-                const char* alarm_path = u8"D:/ProgramData/UVRFiles/alarm.wav";
+                const char* alarm_path = u8"alarm.mp3";
                 if (!already_played) {
                     // 时间到了！
                     ImGui::TextColored(ImVec4(1, 0, 0, 1), "!!! BEEP BEEP BEEP !!!");
