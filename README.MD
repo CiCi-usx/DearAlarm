@@ -15,7 +15,7 @@
 ├── imgui.ini               # ImGui 布局配置（运行时生成）
 ├── thirdparty/             # 第三方依赖库
 │   ├── imgui/              # Dear ImGui 源码
-│   ├── miniaudio.h         # 音频播放（用于 alarm.wav）
+│   ├── miniaudio.h         # 音频播放（用于 alarm.mp3）
 │   └── stb_image.h         # 图像加载（用于 app_icon.png）
 └── build/                  # 构建输出目录（由 CMake 生成）
 ```
