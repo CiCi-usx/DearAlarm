@@ -26,7 +26,7 @@
 
 ### 依赖
 - C++17 编译器，GCC
-- CMake ≥ 3.16
+- CMake ≥ 4.2.0
 - GLFW
 - OpenGL
 - Windows 平台
