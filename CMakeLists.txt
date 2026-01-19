@@ -16,7 +16,13 @@ if(WIN32)
 		COMMAND ${CMAKE_COMMAND} -E copy
 		"${CMAKE_SOURCE_DIR}/alarm.mp3"
 		"$<TARGET_FILE_DIR:DearAlarm>/alarm.mp3"
-		COMMENT "Copying alarm.mp3 to the output directory..."
+		
+		# 添加下面这一行来拷贝图标
+		COMMAND ${CMAKE_COMMAND} -E copy
+		"${CMAKE_SOURCE_DIR}/app_icon.png"
+		"$<TARGET_FILE_DIR:DearAlarm>/app_icon.png"
+		
+		COMMENT "Copying assets (mp3 and png) to the output directory..."
 	)
 
 	# 3. 对已有目标设置头文件搜索路径
