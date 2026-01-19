@@ -8,17 +8,25 @@ if(WIN32)
 
 	set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/thirdparty/imgui")
 
-	# 1. 占坑
-	add_executable(DearAlarm "")
+	# 1. 定义可执行文件，并包含源代码
+	add_executable(DearAlarm main.cpp)
 
-	# 2. 对已有目标设置头文件搜索路径
+	# 2. 添加拷贝命令
+	add_custom_command(TARGET DearAlarm POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy
+		"${CMAKE_SOURCE_DIR}/alarm.mp3"
+		"$<TARGET_FILE_DIR:DearAlarm>/alarm.mp3"
+		COMMENT "Copying alarm.mp3 to the output directory..."
+	)
+
+	# 3. 对已有目标设置头文件搜索路径
 	target_include_directories(DearAlarm PRIVATE
 		${CMAKE_SOURCE_DIR}/thirdparty
 		${IMGUI_DIR}
 		${IMGUI_DIR}/backends
 	)
 
-	# 3. 收集源文件
+	# 4. 收集源文件
 	set(SOURCES
 		main.cpp
 		${IMGUI_DIR}/imgui.cpp
@@ -33,10 +41,10 @@ if(WIN32)
 		list(APPEND SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/resources.rc")
 	endif()
 
-	# 4. 把源文件挂到目标上
+	# 5. 把源文件挂到目标上
 	target_sources(DearAlarm PRIVATE ${SOURCES})
 
-	# 5. 链接库
+	# 6. 链接库
 	target_link_libraries(DearAlarm PRIVATE glfw3 opengl32 gdi32)
 	
 endif()
