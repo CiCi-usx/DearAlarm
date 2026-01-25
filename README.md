@@ -11,8 +11,6 @@
 
 ![image](https://img.shields.io/github/last-commit/CiCi-usx/DearAlarm)
 
-[![image](https://img.shields.io/github/stars/CiCi-usx/DearAlarm)][https://github.com/CiCi-usx/DearAlarm]
-
 [English] | [简体中文](./README_zh-CN.md)
 
 A lightweight alarm application powered by **Dear ImGui + GLFW + OpenGL3**.
