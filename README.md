@@ -24,6 +24,7 @@ A lightweight alarm application powered by **Dear ImGui + GLFW + OpenGL3**.
 ├── main.cpp                # Main entry point
 ├── CMakeLists.txt          # CMake build script
 ├── app_icon.ico / .png     # App icons (for window and system tray)
+├── alarm.mp3
 ├── resources.rc            # Windows resource file (for embedding icons, etc.)
 ├── imgui.ini               # ImGui layout config (generated at runtime)
 ├── thirdparty/             # Third-party dependencies
